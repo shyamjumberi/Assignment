@@ -1,0 +1,8 @@
+satisfaction:
+  total-time: 60
+  values:    # format is <Time> <Satatisfaction value>
+    - 50 300 
+    - 10 60
+    - 20 90
+    - 40 100
+    - 30 240
