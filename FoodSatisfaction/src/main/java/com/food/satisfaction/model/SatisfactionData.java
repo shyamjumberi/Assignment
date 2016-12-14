@@ -27,6 +27,9 @@ public class SatisfactionData implements Serializable {
 	/** Holds Total Time */
 	private int totalTime;
 	
+	/** Holds total number of items */
+	private int totalItems;
+	
 	/**
 	 * @return the timeValues
 	 */
@@ -65,6 +68,18 @@ public class SatisfactionData implements Serializable {
 		this.totalTime = totalTime;
 	}
 	/**
+	 * @return the totalItems
+	 */
+	public int getTotalItems() {
+		return totalItems;
+	}
+	/**
+	 * @param totalItems the totalItems to set
+	 */
+	public void setTotalItems(final int totalItems) {
+		this.totalItems = totalItems;
+	}
+	/**
 	 * String representation of SatisfactionData
 	 */
 	@Override
@@ -76,6 +91,8 @@ public class SatisfactionData implements Serializable {
 		builder.append(Arrays.toString(satisfactionValues));
 		builder.append(", totalTime=");
 		builder.append(totalTime);
+		builder.append(", totalItems=");
+		builder.append(totalItems);
 		builder.append("]");
 		return builder.toString();
 	}

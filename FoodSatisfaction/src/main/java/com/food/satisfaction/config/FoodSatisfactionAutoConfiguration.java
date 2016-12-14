@@ -27,9 +27,9 @@ public class FoodSatisfactionAutoConfiguration {
 	@Bean
 	@Qualifier(value="satisfactionData")
 	public SatisfactionData getSatisfactionData() {
-		final int length = config.getValues().size();
-		final int[] satisfactionValues = new int[length];
-		final int[] timeValues = new int[length];
+		final int totalItems = Integer.parseInt(config.getTotalItems());
+		final int[] satisfactionValues = new int[totalItems];
+		final int[] timeValues = new int[totalItems];
 		int index = 0;
 		for(String value : config.getValues()) {
 			timeValues[index] = Integer.parseInt(value.split(" ")[0]);
@@ -41,6 +41,7 @@ public class FoodSatisfactionAutoConfiguration {
 		data.setTotalTime(Integer.parseInt(config.getTotalTime()));
 		data.setSatisfactionValues(satisfactionValues);
 		data.setTimeValues(timeValues);
+		data.setTotalItems(Integer.parseInt(config.getTotalItems()));
 		return data;
 				
 	}

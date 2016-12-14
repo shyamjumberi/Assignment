@@ -37,12 +37,12 @@ public class FoodSatisfactionService {
 		final int[] timeValues = satisfactionData.getTimeValues();
 		final int totalTime = satisfactionData.getTotalTime();
 
-		final int satisfactionLength = satisfactionValues.length;
-		final int[][] values = new int[satisfactionLength + 1][totalTime + 1];
-		for (int index = 1; index <= satisfactionLength; index++) {
+		final int totalItems = satisfactionData.getTotalItems();
+		final long[][] values = new long[totalItems + 1][totalTime + 1];
+		for (int index = 1; index <= totalItems; index++) {
 			for (int element = 1; element <= totalTime; element++) {
 				if (timeValues[index - 1] <= element) {
-					values[index][element] = Math.max(
+					values[index][element] =  Math.max(
 							satisfactionValues[index - 1] + values[index - 1][element - timeValues[index - 1]],
 							values[index - 1][element]);
 				} else {
@@ -52,10 +52,10 @@ public class FoodSatisfactionService {
 
 		}
 		if (LOG.isInfoEnabled()) {
-			LOG.info("Max satisfaction is : " + values[satisfactionLength][totalTime]);
+			LOG.info("Max satisfaction is : " + values[totalItems][totalTime]);
 			LOG.info("FoodSatisfactionService : getMaxSatisfactionValue() end ");
 		}
 		return ResponseEntity.ok().body("Completed in " + (System.currentTimeMillis() - startTime)
-				+ " milliseconds with max satisfaction : " + values[satisfactionLength][totalTime]);
+				+ " milliseconds with max satisfaction : " + values[totalItems][totalTime]);
 	}
 }

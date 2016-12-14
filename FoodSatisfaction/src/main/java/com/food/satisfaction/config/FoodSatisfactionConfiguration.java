@@ -17,6 +17,9 @@ public class FoodSatisfactionConfiguration {
 
 	/** Holds total time */
 	private String totalTime;
+	
+	/** Holds total number of items */
+	private String totalItems;
 
 	/**
 	 * @return the values
@@ -47,6 +50,19 @@ public class FoodSatisfactionConfiguration {
 	public void setTotalTime(final String totalTime) {
 		this.totalTime = totalTime;
 	}
+	/**
+	 * @return the totalItems
+	 */
+	public String getTotalItems() {
+		return totalItems;
+	}
+
+	/**
+	 * @param totalItems the totalItems to set
+	 */
+	public void setTotalItems(final String totalItems) {
+		this.totalItems = totalItems;
+	}
 
 	/**
 	 * String representation of FoodSatisfactionConfiguration
@@ -58,6 +74,8 @@ public class FoodSatisfactionConfiguration {
 		builder.append(values);
 		builder.append(", totalTime=");
 		builder.append(totalTime);
+		builder.append(", totalItems=");
+		builder.append(totalItems);
 		builder.append("]");
 		return builder.toString();
 	}
