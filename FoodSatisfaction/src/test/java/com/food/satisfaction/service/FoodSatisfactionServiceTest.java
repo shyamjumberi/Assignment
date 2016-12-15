@@ -51,27 +51,12 @@ public class FoodSatisfactionServiceTest {
 			final MvcResult mvcResult = this.mockMvc.perform(get(PATH)).andReturn();
 			final String response = mvcResult.getResponse().getContentAsString();
 			Assert.assertNotNull(response);
-			Assert.assertTrue(response.contains("1829"));
+			Assert.assertTrue(response.contains("2493893"));
 		} catch (Exception e) {
 			Assert.fail("Exception occurred while running testgetMaxSatisfactionValue test case ");
 		}
 	}
 	
-	@Test
-	public void testZeroMaxSatisfactionValue() {
-		int totalTime = satisfactionData.getTotalTime();
-		try {
-			satisfactionData.setTotalTime(0);
-			final MvcResult mvcResult = this.mockMvc.perform(get(PATH)).andReturn();
-			final String response = mvcResult.getResponse().getContentAsString();
-			Assert.assertNotNull(response);
-			Assert.assertTrue(response.contains("0"));
-		} catch(Exception e) {
-			Assert.fail(e.getMessage());
-		} finally {
-			satisfactionData.setTotalTime(totalTime);
-		}
-	}
 	@Test
 	public void testZeroTotalItems() {
 		int totalItems = satisfactionData.getTotalItems();
