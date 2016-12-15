@@ -6,7 +6,7 @@ Developed a spring boot application which calculates the maximum satisfaction a 
 
 Github url : https://github.com/shyamjumberi/Assignment.git
 
-Developed a rest service which calculates the maximum satisfaction.To calculate maximum satisfaction I used the Ksnapsack algorithm.
+Developed a rest service which calculates the maximum satisfaction.To calculate maximum satisfaction,used the Ksnapsack algorithm.
 Here reading the sample data from application.yml file while loading the spring boot application.
 
 ## How to run the application
