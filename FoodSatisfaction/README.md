@@ -11,7 +11,7 @@ Here reading the sample data from application.yml file while loading the spring 
 
 ## How to run the application
 
- To compile the application run the "mvn clean install" maven command
+ To compile the application run the "mvn clean install" maven command.
  To run the application, right click on the project and click on the run as "Spring Boot App" option (if you don't see the "Spring Boot App" option,install the spring sts plugin in eclipse )
 
 Once spring boot application is up , hit the rest service url : http://localhost:8080/getMaxSatisfaction in browser which returns the max satisfaction value
