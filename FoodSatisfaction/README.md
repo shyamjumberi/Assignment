@@ -22,3 +22,4 @@ in browser which returns the max satisfaction value
 Test case file exists in src/java/test folder.To run test case right click on the test case file and run as junit
 
 
+## ScreenShot
