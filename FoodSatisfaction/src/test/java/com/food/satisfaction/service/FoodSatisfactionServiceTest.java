@@ -27,6 +27,8 @@ import com.food.satisfaction.model.SatisfactionData;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 public class FoodSatisfactionServiceTest {
+	
+	private static final String PATH = "/getMaxSatisfaction";
 
 	private MockMvc mockMvc;
 
@@ -46,7 +48,7 @@ public class FoodSatisfactionServiceTest {
 	@Test
 	public void testgetMaxSatisfactionValue() {
 		try {
-			final MvcResult mvcResult = this.mockMvc.perform(get("/getMaxSatisfaction")).andReturn();
+			final MvcResult mvcResult = this.mockMvc.perform(get(PATH)).andReturn();
 			final String response = mvcResult.getResponse().getContentAsString();
 			Assert.assertNotNull(response);
 			Assert.assertTrue(response.contains("1829"));
@@ -60,7 +62,7 @@ public class FoodSatisfactionServiceTest {
 		int totalTime = satisfactionData.getTotalTime();
 		try {
 			satisfactionData.setTotalTime(0);
-			final MvcResult mvcResult = this.mockMvc.perform(get("/getMaxSatisfaction")).andReturn();
+			final MvcResult mvcResult = this.mockMvc.perform(get(PATH)).andReturn();
 			final String response = mvcResult.getResponse().getContentAsString();
 			Assert.assertNotNull(response);
 			Assert.assertTrue(response.contains("0"));
@@ -75,7 +77,7 @@ public class FoodSatisfactionServiceTest {
 		int totalItems = satisfactionData.getTotalItems();
 		try {
 			satisfactionData.setTotalItems(0);
-			final MvcResult mvcResult = this.mockMvc.perform(get("/getMaxSatisfaction")).andReturn();
+			final MvcResult mvcResult = this.mockMvc.perform(get(PATH)).andReturn();
 			final String response = mvcResult.getResponse().getContentAsString();
 			Assert.assertNotNull(response);
 			Assert.assertTrue(response.contains("0"));
