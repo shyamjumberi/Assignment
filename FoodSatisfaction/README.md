@@ -23,3 +23,4 @@ Test case file exists in src/java/test folder.To run test case right click on th
 
 
 ## ScreenShot
+![capture](https://cloud.githubusercontent.com/assets/18001158/21235932/edb087f6-c31e-11e6-8d5d-b32602226c68.JPG)
