@@ -24,6 +24,12 @@ public class FoodSatisfactionAutoConfiguration {
 	@Autowired
 	private FoodSatisfactionConfiguration config;
 	
+	
+	
+	
+	
+	
+	
 	@Bean
 	@Qualifier(value="satisfactionData")
 	public SatisfactionData getSatisfactionData() {

@@ -12,6 +12,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "satisfaction")
 public class FoodSatisfactionConfiguration {
 
+	
+	
+	
 	/** Holds satisfaction and time values */
 	private List<String> values;
 
